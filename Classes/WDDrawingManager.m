@@ -298,8 +298,8 @@ NSString *WDDrawingNewFilenameKey = @"WDDrawingNewFilenameKey";
     static dispatch_once_t onceToken;
     
     dispatch_once(&onceToken, ^{
-        //importQueue = dispatch_queue_create("com.taptrix.inkpad.import", DISPATCH_QUEUE_SERIAL);
-        importQueue = dispatch_queue_create("com.mobilecrabs.vector.import", DISPATCH_QUEUE_SERIAL);
+        importQueue = dispatch_queue_create("com.taptrix.inkpad.import", DISPATCH_QUEUE_SERIAL);
+        //importQueue = dispatch_queue_create("com.mobilecrabs.vector.import", DISPATCH_QUEUE_SERIAL);
     });
     
     return importQueue;
@@ -356,9 +356,8 @@ NSString *WDDrawingNewFilenameKey = @"WDDrawingNewFilenameKey";
     [doc openWithCompletionHandler:^(BOOL success) {
         dispatch_async([self importQueue], ^{
             if (success) {
-                //doc.fileTypeOverride = @"com.taptrix.inkpad";
-                //수정
-                doc.fileTypeOverride = @"com.mobilecrabs.vector";
+                doc.fileTypeOverride = @"com.taptrix.inkpad";
+                //doc.fileTypeOverride = @"com.mobilecrabs.vector";
                 
                 NSString *svgName = [[url lastPathComponent] stringByDeletingPathExtension];
                 NSString *drawingName = [self uniqueFilenameWithPrefix:svgName extension:WDDefaultDrawingExtension];

@@ -146,8 +146,8 @@ static NSString *errorDomain = @"WDDocument";
         }
     } else if ([typeName isEqualToString:@"public.svgz-image"]) {
         [self loadFromSVG:[(NSData *)contents decompress] error:outError];
-   //} else if ([typeName isEqualToString:@"com.taptrix.inkpad"]) {
-    } else if ([typeName isEqualToString:@"com.mobilecrabs.vector"]) {
+    } else if ([typeName isEqualToString:@"com.taptrix.inkpad"]) {
+    //} else if ([typeName isEqualToString:@"com.mobilecrabs.vector"]) {
         [self loadFromInkpad:contents error:outError];
     } else {
         if (outError) {
@@ -193,8 +193,8 @@ static NSString *errorDomain = @"WDDocument";
         contents = [drawing SVGRepresentation];
     } else if ([typeName isEqualToString:@"public.svgz-image"] || [typeName isEqualToString:@"SVGZ"]) {
         contents = [[drawing SVGRepresentation] compress];
-    //} else if ([typeName isEqualToString:@"com.taptrix.inkpad"] || [typeName isEqualToString:@"Inkpad"]) {
-    } else if ([typeName isEqualToString:@"com.mobilecrabs.vector"] || [typeName isEqualToString:@"Inkpad"]) {      
+    } else if ([typeName isEqualToString:@"com.taptrix.inkpad"] || [typeName isEqualToString:@"Inkpad"]) {
+    //} else if ([typeName isEqualToString:@"com.mobilecrabs.vector"] || [typeName isEqualToString:@"Inkpad"]) {
         contents = [drawing inkpadRepresentation];
     } else if ([typeName isEqualToString:@"com.adobe.pdf"] || [typeName isEqualToString:@"PDF"]) {
         contents = [drawing PDFRepresentation];
